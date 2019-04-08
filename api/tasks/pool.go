@@ -33,7 +33,7 @@ var resourceLocker = make(chan *resourceLock)
 
 //nolint: gocyclo
 func (p *taskPool) run() {
-	ticker := time.NewTicker(5 * time.Second)
+	ticker := time.NewTicker(500 * time.Millisecond)
 
 	defer func() {
 		close(resourceLocker)
