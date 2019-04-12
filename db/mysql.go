@@ -50,7 +50,7 @@ func Connect() error {
 			return err
 		}
 	}
-
+	db.SetMaxOpenConns(100)
 	Mysql = &gorp.DbMap{Db: db, Dialect: gorp.MySQLDialect{Engine: "InnoDB", Encoding: "UTF8"}}
 	return nil
 }
